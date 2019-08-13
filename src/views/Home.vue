@@ -19,7 +19,7 @@ export default {
   methods: {
     async getData() {
       try {
-        let res = await home({})
+        let res = await home()
         console.log(res)
       } catch (error) {
         console.log(error)

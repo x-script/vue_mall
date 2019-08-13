@@ -67,10 +67,10 @@ function get(url, params = {}) {
  * @param {String} url [请求的url地址]
  * @param {Object} params [请求时携带的参数]
  */
-function post (url, params) {
+function post (url, params = {}) {
   return new Promise((resolve, reject) => {
     axios
-      .post(url, {})
+      .post(url, qs.stringify(params))
       .then(res => {
         resolve(res.data)
       })

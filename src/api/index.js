@@ -8,9 +8,7 @@ const signin = params => {
   return post('/user/signin', params)
 }
 
-function home(params) {
-  return post('/s', params)
-}
+const home = params => post('/', params)
 
 export {
   signup,
