@@ -1,18 +1,31 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <van-row>
+      <van-col span="3">32</van-col>
+      <van-col span="16">3</van-col>
+      <van-col span="5">4</van-col>
+    </van-row>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import { home } from '@/api';
 
 export default {
-  name: "home",
-  components: {
-    HelloWorld
-  }
-};
+  name: 'Home',
+  created() {
+    this.getData()
+  },
+  methods: {
+    async getData() {
+      try {
+        let res = await home({})
+        console.log(res)
+      } catch (error) {
+        console.log(error)
+      }
+      
+    }
+  },
+}
 </script>
